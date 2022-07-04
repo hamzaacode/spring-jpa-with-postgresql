@@ -15,11 +15,11 @@ public class SpringJpaWithPostgresqlApplication {
         SpringApplication.run(SpringJpaWithPostgresqlApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
-        return args -> {
-            Student student = new Student("Kona", "kona.k@gmail.com", "Dhaka", 22);
-            studentRepository.save(student);
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
+//        return args -> {
+//            Student student = new Student("Kona", "kona.k@gmail.com", "Dhaka", 22);
+//            studentRepository.save(student);
+//        };
+//    }
 }

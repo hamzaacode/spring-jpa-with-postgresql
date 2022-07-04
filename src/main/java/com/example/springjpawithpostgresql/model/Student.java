@@ -1,5 +1,7 @@
 package com.example.springjpawithpostgresql.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity(name = "Student")
@@ -9,6 +11,7 @@ import javax.persistence.*;
                 @UniqueConstraint(name = "student_unique_email", columnNames = "email")
         }
 )
+@Data
 public class Student {
 
     @Id
