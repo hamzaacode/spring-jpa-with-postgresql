@@ -1,9 +1,16 @@
 package com.example.springjpawithpostgresql.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity(name = "Student")
 @Table(
         name = "student",
@@ -11,7 +18,6 @@ import javax.persistence.*;
                 @UniqueConstraint(name = "student_unique_email", columnNames = "email")
         }
 )
-@Data
 public class Student {
 
     @Id
@@ -58,58 +64,6 @@ public class Student {
             columnDefinition = "Text"
     )
     private String email;
-
-
-    public Student() {
-    }
-
-    public Student(String name, String email, String address, int age) {
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.age = age;
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     @Override
     public String toString() {
